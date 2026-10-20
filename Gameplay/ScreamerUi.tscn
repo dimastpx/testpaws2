@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ersuvmkhdmbh"]
+
+[ext_resource type="Script" uid="uid://dorle3drdq1tw" path="res://Gameplay/screamer_ui.gd" id="1_otjmt"]
+[ext_resource type="Texture2D" uid="uid://bp8txn4ejmwqu" path="res://Resourses/lynx.png" id="2_mtvsi"]
+[ext_resource type="Texture2D" uid="uid://cwj160c22yahn" path="res://Resourses/tofy.png" id="2_uyrco"]
+[ext_resource type="Texture2D" uid="uid://s4rrgh81ugsx" path="res://Resourses/cool.png" id="3_mtvsi"]
+[ext_resource type="Texture2D" uid="uid://b5q6vyjgutrci" path="res://Resourses/bars.png" id="4_5d8er"]
+[ext_resource type="AudioStream" uid="uid://cohcgqaq08yys" path="res://Sounds/Screamer.mp3" id="6_5d8er"]
+
+[node name="ScreamerUi" type="Control" unique_id=993933125]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_otjmt")
+lynx_texture = ExtResource("2_mtvsi")
+tofy_texture = ExtResource("2_uyrco")
+cool_texture = ExtResource("3_mtvsi")
+bars_texture = ExtResource("4_5d8er")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1604364224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1521324436]
+stream = ExtResource("6_5d8er")

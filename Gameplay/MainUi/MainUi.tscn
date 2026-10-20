@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://c7ffqb2jwp86h"]
+
+[ext_resource type="Script" uid="uid://bl4y1jilwljfq" path="res://Gameplay/MainUi/main_ui.gd" id="1_0ksm7"]
+
+[node name="MainUi" type="Control" unique_id=1855169444]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ksm7")
+
+[node name="LButton" type="Button" parent="." unique_id=1160039145]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 125.0
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="LButton" unique_id=1357741473]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -73.0
+offset_right = 30.5
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 106
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RButton" type="Button" parent="." unique_id=31579690]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.0
+grow_horizontal = 0
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="RButton" unique_id=1078672356]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 106
+text = ">"
+
+[node name="MidButton" type="Button" parent="." unique_id=1455056852]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -46.0
+offset_right = 263.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="Label" type="Label" parent="MidButton" unique_id=783140417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "V  V  V"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerInfo" type="VBoxContainer" parent="." unique_id=1424889872]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -83.0
+offset_right = 237.0
+offset_bottom = -29.0
+grow_vertical = 0
+
+[node name="Power" type="HBoxContainer" parent="PowerInfo" unique_id=1959707473]
+layout_mode = 2
+size_flags_vertical = 7
+
+[node name="Label" type="Label" parent="PowerInfo/Power" unique_id=693829938]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Энергия: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PowerInfo/Power" unique_id=452050419]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 2.0
+
+[node name="Consumption" type="Label" parent="PowerInfo" unique_id=1229608043]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Потребление: 0.5"
+
+[node name="PauseButton" type="Button" parent="." unique_id=724081807]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 32.0
+offset_right = 116.0
+offset_bottom = 92.0
+grow_horizontal = 2
+text = "| |"
+flat = true
+
+[node name="Time" type="Label" parent="." unique_id=804163776]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 35.0
+offset_right = 114.0
+offset_bottom = 97.0
+
+[connection signal="focus_entered" from="LButton" to="." method="_on_l_button_focus_entered"]
+[connection signal="focus_exited" from="LButton" to="." method="_on_l_button_focus_exited"]
+[connection signal="mouse_entered" from="LButton" to="." method="_on_l_button_mouse_entered"]
+[connection signal="mouse_exited" from="LButton" to="." method="_on_l_button_mouse_exited"]
+[connection signal="pressed" from="LButton" to="." method="_on_l_button_pressed"]
+[connection signal="mouse_entered" from="RButton" to="." method="_on_r_button_mouse_entered"]
+[connection signal="mouse_exited" from="RButton" to="." method="_on_r_button_mouse_exited"]
+[connection signal="pressed" from="RButton" to="." method="_on_r_button_pressed"]
+[connection signal="mouse_entered" from="MidButton" to="." method="_on_mid_button_mouse_entered"]
+[connection signal="mouse_exited" from="MidButton" to="." method="_on_mid_button_mouse_exited"]
+[connection signal="pressed" from="MidButton" to="." method="_on_mid_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

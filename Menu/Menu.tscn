@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bp08xxodwvpis"]
+
+[ext_resource type="Material" uid="uid://f838ca2qv2te" path="res://Resourses/Wall/Bricks097_2K-JPG.tres" id="1_jf1j2"]
+[ext_resource type="Material" uid="uid://bfib2piqdw5i7" path="res://Resourses/Floor/WoodFloor041_2K-JPG.tres" id="2_e56cd"]
+[ext_resource type="PackedScene" uid="uid://dq0wjss1yym8a" path="res://Gameplay/FlickerLight/FlickerLight.tscn" id="4_w32jx"]
+[ext_resource type="PackedScene" uid="uid://bmotvy64mmumh" path="res://Menu/MenuUi/MenuUi.tscn" id="5_w32jx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e56cd"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.25815743, 0.24847625, 0.23741762, 1)
+ground_bottom_color = Color(0.2642289, 0.22550413, 0.18126968, 1)
+ground_horizon_color = Color(0.25815743, 0.24847625, 0.23741762, 1)
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_u03px"]
+sky_material = SubResource("ProceduralSkyMaterial_e56cd")
+
+[sub_resource type="Environment" id="Environment_crea4"]
+background_mode = 2
+sky = SubResource("Sky_u03px")
+
+[sub_resource type="BoxMesh" id="BoxMesh_c34bh"]
+size = Vector3(9.744141, 5.263916, 0.13867188)
+
+[sub_resource type="BoxMesh" id="BoxMesh_22io0"]
+size = Vector3(9.576111, 0.4609375, 9.64917)
+
+[node name="Menu" type="Node3D" unique_id=1657768850]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1813706355]
+environment = SubResource("Environment_crea4")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1655159209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967, -0.969)
+
+[node name="Walls" type="Node3D" parent="." unique_id=1289127178]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls" unique_id=1503490135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15039063, 1.0474854, -3.4184823)
+material_override = ExtResource("1_jf1j2")
+mesh = SubResource("BoxMesh_c34bh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls" unique_id=1323007153]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.339369, 1.0474854, 0.9265399)
+material_override = ExtResource("1_jf1j2")
+mesh = SubResource("BoxMesh_c34bh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls" unique_id=1144025961]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.910658, 1.0474854, 0.9265399)
+material_override = ExtResource("1_jf1j2")
+mesh = SubResource("BoxMesh_c34bh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls" unique_id=1559455129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13076782, -1.6869179, 0.95129395)
+material_override = ExtResource("2_e56cd")
+mesh = SubResource("BoxMesh_22io0")
+
+[node name="FlickerLight" parent="." unique_id=1949789363 instance=ExtResource("4_w32jx")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.3841858e-07, 3.2009258, -3.187965)
+is_menu = true
+
+[node name="MenuUi" parent="." unique_id=1691263173 instance=ExtResource("5_w32jx")]

@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://bjiafmwlbjkdo"]
+
+[ext_resource type="Script" uid="uid://ci6rcjo2pvjkn" path="res://Gameplay/gameplay.gd" id="1_8uvy0"]
+[ext_resource type="Material" uid="uid://f838ca2qv2te" path="res://Resourses/Wall/Bricks097_2K-JPG.tres" id="1_hs5x1"]
+[ext_resource type="Script" uid="uid://c25tb2o1gxw0b" path="res://Gameplay/game_manager.gd" id="2_fvut2"]
+[ext_resource type="Material" uid="uid://bfib2piqdw5i7" path="res://Resourses/Floor/WoodFloor041_2K-JPG.tres" id="2_jrg7p"]
+[ext_resource type="PackedScene" uid="uid://dq0wjss1yym8a" path="res://Gameplay/FlickerLight/FlickerLight.tscn" id="3_5vg7g"]
+[ext_resource type="PackedScene" uid="uid://ci7jtj4vsoke" path="res://Gameplay/Camera/camera_3d.tscn" id="4_2gist"]
+[ext_resource type="PackedScene" uid="uid://c7ffqb2jwp86h" path="res://Gameplay/MainUi/MainUi.tscn" id="4_8txw0"]
+[ext_resource type="PackedScene" uid="uid://baiwhuiv6ncgf" path="res://Gameplay/table.tscn" id="6_8uvy0"]
+[ext_resource type="PackedScene" uid="uid://leur7up3lw7n" path="res://Gameplay/PauseUi/PauseUi.tscn" id="8_5vtsj"]
+[ext_resource type="PackedScene" uid="uid://c5h0mwt07ri0" path="res://Gameplay/TabletUi/TabletUi.tscn" id="10_au2ii"]
+[ext_resource type="Script" uid="uid://uvrri8hpdedd" path="res://Gameplay/door.gd" id="12_2sjcd"]
+[ext_resource type="Script" uid="uid://bthbu5dc4vu64" path="res://Gameplay/FlickerLight/spot_light_3d.gd" id="13_4g8px"]
+[ext_resource type="Material" path="res://Resourses/Door/RoadLines022A_2K-JPG.tres" id="13_6erpl"]
+[ext_resource type="Texture2D" uid="uid://b5q6vyjgutrci" path="res://Resourses/bars.png" id="14_4g8px"]
+[ext_resource type="PackedScene" uid="uid://b8dmtdr84prc4" path="res://Resourses/Walls/SideWall.glb" id="15_4g8px"]
+[ext_resource type="Texture2D" uid="uid://s4rrgh81ugsx" path="res://Resourses/cool.png" id="15_behik"]
+[ext_resource type="Texture2D" uid="uid://cwj160c22yahn" path="res://Resourses/tofy.png" id="16_x1pg7"]
+[ext_resource type="PackedScene" uid="uid://ersuvmkhdmbh" path="res://Gameplay/ScreamerUi.tscn" id="18_bksv5"]
+[ext_resource type="Script" uid="uid://bviiwjn2xjolm" path="res://Gameplay/fan.gd" id="19_dm4pg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6erpl"]
+sky_top_color = Color(0.6300876, 0.73990613, 0.8702539, 1)
+sky_horizon_color = Color(1.0205936, 1.038367, 1.0598953, 1)
+ground_bottom_color = Color(0.2642289, 0.22550413, 0.18126968, 1)
+ground_horizon_color = Color(1.0205936, 1.038367, 1.0598953, 1)
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_4g8px"]
+sky_material = SubResource("ProceduralSkyMaterial_6erpl")
+
+[sub_resource type="Environment" id="Environment_behik"]
+background_mode = 2
+sky = SubResource("Sky_4g8px")
+
+[sub_resource type="BoxMesh" id="BoxMesh_c34bh"]
+lightmap_size_hint = Vector2i(64, 106)
+add_uv2 = true
+size = Vector3(12, 4, 0.179)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ip0vk"]
+lightmap_size_hint = Vector2i(151, 94)
+add_uv2 = true
+size = Vector3(17.467133, 0.1237793, 12.035034)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6iwah"]
+load_path = "res://.godot/imported/WoodFloor041_2K-JPG_Color.jpg-b0b52a2f668c482d2f24bbb2ffa4b2c9.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wcx70"]
+load_path = "res://.godot/imported/WoodFloor041_2K-JPG_AmbientOcclusion.jpg-9dcb55b0bb285f160044255b1c13077c.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2sjcd"]
+load_path = "res://.godot/imported/WoodFloor041_2K-JPG_Displacement.jpg-45a54a5a2cf8b4f0d0fa7095aafb8bea.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6erpl"]
+load_path = "res://.godot/imported/WoodFloor041_2K-JPG_NormalGL.jpg-15a339d0cad7998a8c32329d080e9d7a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4g8px"]
+load_path = "res://.godot/imported/WoodFloor041_2K-JPG_Roughness.jpg-a0b9f05ebfa3e00197ab474f1a9cd306.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dm4pg"]
+albedo_texture = SubResource("CompressedTexture2D_6iwah")
+roughness_texture = SubResource("CompressedTexture2D_4g8px")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_6erpl")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_wcx70")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = SubResource("CompressedTexture2D_2sjcd")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sjcd"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_c7n6u"]
+size = Vector3(0.13555908, 0.3256836, 0.37329102)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_au2ii"]
+size = Vector3(0.13555908, 0.51623535, 0.6921997)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6erpl"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6iwah"]
+size = Vector3(0.13555908, 0.54467773, 0.68566895)
+
+[sub_resource type="BoxMesh" id="BoxMesh_22io0"]
+size = Vector3(0.0982666, 3.4568424, 2.1104126)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1pg7"]
+albedo_texture = ExtResource("14_4g8px")
+
+[sub_resource type="BoxMesh" id="BoxMesh_vlsi1"]
+lightmap_size_hint = Vector2i(14, 28)
+size = Vector3(1, 1.7168579, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4g8px"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcx70"]
+size = Vector3(0.13555908, 0.4333496, 0.590271)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_behik"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sjcd"]
+size = Vector3(0.13555908, 0.44750977, 0.5942993)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bksv5"]
+albedo_texture = ExtResource("15_behik")
+uv1_scale = Vector3(2.065, 2.065, 2.065)
+uv1_offset = Vector3(0.125, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nl0ux"]
+size = Vector3(1, 2.025879, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcykx"]
+albedo_texture = ExtResource("16_x1pg7")
+uv1_scale = Vector3(2.525, 2.525, 2.525)
+uv1_offset = Vector3(0.06, -0.32, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4lyvc"]
+size = Vector3(0.21655273, 1.0390625, 0.18548584)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aw0x1"]
+size = Vector3(1.1660461, 0.07424927, 0.06298828)
+
+[node name="Gameplay" type="Node3D" unique_id=218115935 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_8uvy0")
+camera = NodePath("Camera3D")
+
+[node name="GameManager" type="Node" parent="." unique_id=634000642]
+script = ExtResource("2_fvut2")
+money_drain_interval = 0.1
+money_button = 20
+door_reaction_time = 5.0
+easy_min_value = 10.0
+easy_max_value = 20.0
+easy_power_multiplier = 0.3
+normal_min_value = 10.0
+normal_max_value = 15.0
+normal_power_multiplier = 0.4
+hard_min_value = 5.0
+hard_max_value = 15.0
+hard_power_multiplier = 0.5
+hardcore_min_value = 5.0
+hardcore_max_value = 10.0
+hardcore_power_multiplier = 0.6
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1189824630]
+environment = SubResource("Environment_behik")
+
+[node name="Walls" type="Node3D" parent="." unique_id=551940786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8991163)
+
+[node name="Wall" type="MeshInstance3D" parent="Walls" unique_id=2001969831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03253174)
+material_override = ExtResource("1_hs5x1")
+mesh = SubResource("BoxMesh_c34bh")
+
+[node name="Floor" type="MeshInstance3D" parent="Walls" unique_id=1105780054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1302501, -1.996909, 6.0442677)
+material_override = ExtResource("2_jrg7p")
+mesh = SubResource("BoxMesh_ip0vk")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Walls" unique_id=1911409267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02923584, 1.6590273, 6.0456166)
+material_override = SubResource("StandardMaterial3D_dm4pg")
+mesh = SubResource("BoxMesh_ip0vk")
+
+[node name="LWall" parent="Walls" unique_id=1436077026 instance=ExtResource("15_4g8px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.071, -0.007, 6.1131163)
+
+[node name="RWall" parent="Walls" unique_id=1238443604 instance=ExtResource("15_4g8px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.088, -0.007, 6.1131163)
+
+[node name="Camera3D" parent="." unique_id=919633085 node_paths=PackedStringArray("tablet_ui") instance=ExtResource("4_2gist")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.008, -0.275, 0.513)
+tablet_ui = NodePath("../TabletUi")
+
+[node name="FlickerLight" parent="." unique_id=1949789363 instance=ExtResource("3_5vg7g")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.08089359, 1.63007, -2.6307847)
+light_energy = 2.0
+shadow_enabled = true
+distance_fade_begin = 0.0
+spot_range = 7.827298
+spot_angle = 79.64938
+base_energy = 2.0
+
+[node name="ScreamerUi" parent="." unique_id=993933125 instance=ExtResource("18_bksv5")]
+
+[node name="MainUi" parent="." unique_id=1855169444 instance=ExtResource("4_8txw0")]
+mouse_filter = 1
+
+[node name="table" parent="." unique_id=1632059944 instance=ExtResource("6_8uvy0")]
+transform = Transform3D(-2.6008276e-08, 0, -0.595, 0, 0.595, 0, 0.595, 0, -2.6008276e-08, -0.17476016, -2.0139086, -2.1197062)
+
+[node name="TabletUi" parent="." unique_id=1942895185 instance=ExtResource("10_au2ii")]
+
+[node name="LDoor" type="Node3D" parent="." unique_id=106442145 node_paths=PackedStringArray("bars_object")]
+script = ExtResource("12_2sjcd")
+is_left = true
+bars_object = NodePath("Bars")
+
+[node name="Buttons" type="Node3D" parent="LDoor" unique_id=353463223]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -5.9583244, -0.13682732, -1.7221079)
+
+[node name="DoorButton" type="MeshInstance3D" parent="LDoor/Buttons" unique_id=1653200968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022247314, -0.21110933, 0.14196777)
+material_override = SubResource("StandardMaterial3D_2sjcd")
+mesh = SubResource("BoxMesh_c7n6u")
+
+[node name="Area3D" type="Area3D" parent="LDoor/Buttons/DoorButton" unique_id=442600710]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LDoor/Buttons/DoorButton/Area3D" unique_id=1939493899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09527588, -0.015716553)
+shape = SubResource("BoxShape3D_au2ii")
+
+[node name="LightButton" type="MeshInstance3D" parent="LDoor/Buttons" unique_id=2076870272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022247314, -0.641811, 0.14196777)
+material_override = SubResource("StandardMaterial3D_6erpl")
+mesh = SubResource("BoxMesh_c7n6u")
+
+[node name="Area3D" type="Area3D" parent="LDoor/Buttons/LightButton" unique_id=584006322]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LDoor/Buttons/LightButton/Area3D" unique_id=867060787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10949707, -0.018493652)
+shape = SubResource("BoxShape3D_6iwah")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="LDoor" unique_id=220219814]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.815742, 1.4458036, -0.13723975)
+shadow_enabled = true
+spot_range = 5.2497263
+spot_angle = 28.52702
+script = ExtResource("13_4g8px")
+
+[node name="DoorFlap" type="MeshInstance3D" parent="LDoor" unique_id=1969391824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.054, -0.31, -0.166)
+material_override = ExtResource("13_6erpl")
+gi_mode = 2
+mesh = SubResource("BoxMesh_22io0")
+
+[node name="Bars" type="MeshInstance3D" parent="LDoor" unique_id=5536246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8797417, -1.0444102, -0.197752)
+material_override = SubResource("StandardMaterial3D_x1pg7")
+gi_mode = 2
+mesh = SubResource("BoxMesh_vlsi1")
+
+[node name="RDoor" type="Node3D" parent="." unique_id=368088898 node_paths=PackedStringArray("cool_object", "tofy_object")]
+script = ExtResource("12_2sjcd")
+cool_object = NodePath("Cool")
+tofy_object = NodePath("Tofy")
+
+[node name="Buttons" type="Node3D" parent="RDoor" unique_id=472738761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.975126, -0.1368273, -1.7221079)
+
+[node name="DoorButton" type="MeshInstance3D" parent="RDoor/Buttons" unique_id=902372765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022247314, -0.21110933, 0.14196777)
+material_override = SubResource("StandardMaterial3D_4g8px")
+mesh = SubResource("BoxMesh_c7n6u")
+
+[node name="Area3D" type="Area3D" parent="RDoor/Buttons/DoorButton" unique_id=169174891]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RDoor/Buttons/DoorButton/Area3D" unique_id=2039140574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.053833008, -0.011016846)
+shape = SubResource("BoxShape3D_wcx70")
+
+[node name="LightButton" type="MeshInstance3D" parent="RDoor/Buttons" unique_id=738745232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022247314, -0.64181095, 0.14196777)
+material_override = SubResource("StandardMaterial3D_behik")
+mesh = SubResource("BoxMesh_c7n6u")
+
+[node name="Area3D" type="Area3D" parent="RDoor/Buttons/LightButton" unique_id=1970062399]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RDoor/Buttons/LightButton/Area3D" unique_id=1742565000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.060913086, -0.009490967)
+shape = SubResource("BoxShape3D_2sjcd")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="RDoor" unique_id=1617006642]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.7747736, 1.4458036, -0.13723975)
+shadow_enabled = true
+spot_range = 5.2497263
+spot_angle = 28.52702
+script = ExtResource("13_4g8px")
+
+[node name="DoorFlap" type="MeshInstance3D" parent="RDoor" unique_id=1747044369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1143036, -0.3098297, -0.16586304)
+material_override = ExtResource("13_6erpl")
+gi_mode = 2
+mesh = SubResource("BoxMesh_22io0")
+
+[node name="Cool" type="MeshInstance3D" parent="RDoor" unique_id=1737476237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5794406, -0.8177342, 0)
+material_override = SubResource("StandardMaterial3D_bksv5")
+gi_mode = 2
+mesh = SubResource("BoxMesh_nl0ux")
+
+[node name="Tofy" type="MeshInstance3D" parent="RDoor" unique_id=1347521286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.563166, -0.7867627, 0)
+material_override = SubResource("StandardMaterial3D_dcykx")
+gi_mode = 2
+mesh = SubResource("BoxMesh_nl0ux")
+
+[node name="PauseUi" parent="." unique_id=66471246 node_paths=PackedStringArray("main_ui", "tablet_ui") instance=ExtResource("8_5vtsj")]
+visible = false
+main_ui = NodePath("../MainUi")
+tablet_ui = NodePath("../TabletUi")
+
+[node name="Fan" type="Node3D" parent="." unique_id=241430443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7664492, -0.32463366, -2.0390656)
+script = ExtResource("19_dm4pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fan" unique_id=1246650497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48456645, -0.05285859, -0.022857904)
+mesh = SubResource("BoxMesh_4lyvc")
+
+[node name="Rotator" type="MeshInstance3D" parent="Fan" unique_id=917146971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48764133, 0.35792315, 0.096024275)
+gi_mode = 2
+mesh = SubResource("BoxMesh_aw0x1")
+
+[connection signal="jumpscare" from="GameManager" to="ScreamerUi" method="_on_game_manager_jumpscare"]
+[connection signal="powerdown" from="GameManager" to="." method="_on_game_manager_powerdown"]
+[connection signal="powerdown" from="GameManager" to="FlickerLight" method="_on_game_manager_powerdown"]
+[connection signal="powerdown" from="GameManager" to="MainUi" method="_on_game_manager_powerdown"]
+[connection signal="powerdown" from="GameManager" to="LDoor" method="_on_game_manager_powerdown"]
+[connection signal="powerdown" from="GameManager" to="RDoor" method="_on_game_manager_powerdown"]
+[connection signal="time_updated" from="GameManager" to="MainUi" method="_on_game_manager_time_updated"]
+[connection signal="update_consumption" from="GameManager" to="MainUi" method="_on_game_manager_update_consumption"]
+[connection signal="update_consumption" from="GameManager" to="TabletUi" method="_on_game_manager_update_consumption"]
+[connection signal="update_money" from="GameManager" to="TabletUi" method="_on_game_manager_update_money"]
+[connection signal="update_power" from="GameManager" to="MainUi" method="_on_game_manager_update_power"]
+[connection signal="main_ui_tablet_visible" from="Camera3D" to="MainUi" method="_on_camera_3d_main_ui_tablet_visible"]
+[connection signal="tablet_change" from="Camera3D" to="GameManager" method="_on_camera_3d_tablet_change"]
+[connection signal="btn_pause" from="MainUi" to="PauseUi" method="_on_main_ui_btn_pause"]
+[connection signal="btn_turn_left" from="MainUi" to="." method="_on_main_ui_btn_turn_left"]
+[connection signal="btn_turn_right" from="MainUi" to="." method="_on_main_ui_btn_turn_right"]
+[connection signal="btn_use" from="MainUi" to="." method="_on_main_ui_btn_use"]
+[connection signal="close_tablet" from="TabletUi" to="." method="_on_tablet_ui_close_tablet"]
+[connection signal="money_plus" from="TabletUi" to="GameManager" method="_on_tablet_ui_money_plus"]
+[connection signal="change_door" from="LDoor" to="GameManager" method="_on_l_door_change_door"]
+[connection signal="light_door" from="LDoor" to="GameManager" method="_on_l_door_light_l_door"]
+[connection signal="change_door" from="RDoor" to="GameManager" method="_on_r_door_change_door"]
+[connection signal="light_door" from="RDoor" to="GameManager" method="_on_r_door_light_door"]
+[connection signal="game_resumed" from="PauseUi" to="MainUi" method="_on_pause_ui_game_resumed"]

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://leur7up3lw7n"]
+
+[ext_resource type="Script" uid="uid://hvoxloi2haxi" path="res://Gameplay/PauseUi/pause_ui.gd" id="1_r6mm1"]
+
+[node name="PauseUi" type="Control" unique_id=66471246]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6mm1")
+
+[node name="Settings" type="ColorRect" parent="." unique_id=2090758280]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -148.0
+offset_right = 347.0
+offset_bottom = -57.0
+grow_vertical = 0
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.6)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=519563283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlickerCheck" type="CheckButton" parent="Settings/VBoxContainer" unique_id=89090775]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Мерцание"
+
+[node name="ControlsUiCheck" type="CheckButton" parent="Settings/VBoxContainer" unique_id=990743440]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Стрелки в интерфесе"
+
+[node name="ResumeButton" type="Button" parent="." unique_id=1216525070]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -105.0
+offset_right = -62.0
+offset_bottom = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Продолжить"
+
+[node name="Button" type="Button" parent="." unique_id=555029809]
+layout_mode = 1
+offset_left = 75.0
+offset_top = 34.0
+offset_right = 347.0
+offset_bottom = 83.0
+text = "Выйти в меню"
+
+[connection signal="toggled" from="Settings/VBoxContainer/FlickerCheck" to="." method="_on_flicker_check_toggled"]
+[connection signal="toggled" from="Settings/VBoxContainer/ControlsUiCheck" to="." method="_on_controls_ui_check_toggled"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

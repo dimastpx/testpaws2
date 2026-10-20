@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b7m6cbdguj2ql"]
+
+[ext_resource type="Script" uid="uid://dvy8pi2s3wnsf" path="res://Gameplay/win_ui.gd" id="1_v3p3t"]
+
+[node name="WinUi" type="Control" unique_id=411338681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3p3t")
+
+[node name="TimerText" type="Label" parent="." unique_id=96886407]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -29.75
+offset_right = 153.5
+offset_bottom = 29.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 88
+text = "6:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="." unique_id=1677974425]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 102.0
+offset_right = 114.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "В меню"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

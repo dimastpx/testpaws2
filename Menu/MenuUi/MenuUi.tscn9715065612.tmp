@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bmotvy64mmumh"]
+
+[ext_resource type="Script" uid="uid://dctwjoduvlgla" path="res://Menu/MenuUi/menu_ui.gd" id="1_ts4c0"]
+
+[node name="MenuUi" type="Control" unique_id=1691263173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts4c0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2015509660]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -169.0
+offset_right = 325.0
+offset_bottom = -33.0
+grow_vertical = 0
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.23529412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=760809949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlickerCheck" type="CheckButton" parent="ColorRect/VBoxContainer" unique_id=1843130434]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Мерцание"
+
+[node name="FlickerSelector" type="OptionButton" parent="ColorRect/VBoxContainer" unique_id=259538891]
+layout_mode = 2
+size_flags_vertical = 3
+selected = 1
+item_count = 3
+popup/item_0/text = "Слабое мерцание"
+popup/item_0/id = 0
+popup/item_1/text = "Среднее мерцание"
+popup/item_1/id = 1
+popup/item_2/text = "Сильное мерцание"
+popup/item_2/id = 2
+
+[node name="DifficultySelector" type="OptionButton" parent="ColorRect/VBoxContainer" unique_id=1352764558]
+layout_mode = 2
+size_flags_vertical = 3
+selected = 1
+item_count = 4
+popup/item_0/text = "Легко"
+popup/item_0/id = 0
+popup/item_1/text = "Нормально"
+popup/item_1/id = 1
+popup/item_2/text = "Сложно"
+popup/item_2/id = 2
+popup/item_3/text = "UwU"
+popup/item_3/id = 3
+
+[node name="ControlsUiCheck" type="CheckButton" parent="ColorRect/VBoxContainer" unique_id=1795361462]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Стрелки в интерфейсе"
+
+[node name="PlayButton" type="Button" parent="." unique_id=580928511]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -97.0
+offset_right = -28.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Играть"
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/FlickerCheck" to="." method="_on_flicker_check_toggled"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/FlickerSelector" to="." method="_on_flicker_selector_item_selected"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/DifficultySelector" to="." method="_on_difficulty_selector_item_selected"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/ControlsUiCheck" to="." method="_on_controls_ui_check_toggled"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

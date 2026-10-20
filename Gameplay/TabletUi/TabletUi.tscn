@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://c5h0mwt07ri0"]
+
+[ext_resource type="Script" uid="uid://biqvhojtu031w" path="res://Gameplay/TabletUi/tablet_ui.gd" id="1_rc21g"]
+[ext_resource type="Texture2D" uid="uid://bea2wesqgf0hm" path="res://Resourses/CameraBGs/cam_corridor_l.jpg" id="2_6kbk0"]
+[ext_resource type="Texture2D" uid="uid://bmahx6ydowqxm" path="res://Resourses/CameraBGs/cam_corridor_r.jpg" id="3_g52y4"]
+[ext_resource type="Texture2D" uid="uid://cfu1twmjmnfbb" path="res://Resourses/CameraBGs/cam_scene.jpg" id="4_a4gjp"]
+[ext_resource type="Texture2D" uid="uid://o2psryq4pyem" path="res://Resourses/CameraBGs/cam_drums.jpg" id="5_g0i15"]
+[ext_resource type="Texture2D" uid="uid://b5q6vyjgutrci" path="res://Resourses/bars.png" id="6_g52y4"]
+[ext_resource type="Texture2D" uid="uid://cwj160c22yahn" path="res://Resourses/tofy.png" id="7_a4gjp"]
+[ext_resource type="Texture2D" uid="uid://s4rrgh81ugsx" path="res://Resourses/cool.png" id="8_g0i15"]
+
+[node name="TabletUi" type="Control" unique_id=1942895185 node_paths=PackedStringArray("bars_on_lcor", "bars_on_scene", "bars_on_drums", "cool_on_rcor", "cool_on_scene", "tofy_on_rcor", "tofy_on_scene")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = 71.0
+offset_right = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rc21g")
+cam_lcor_bg = ExtResource("2_6kbk0")
+cam_rcor_bg = ExtResource("3_g52y4")
+cam_scene_bg = ExtResource("4_a4gjp")
+cam_drums_bg = ExtResource("5_g0i15")
+bars_on_lcor = NodePath("Camera/LcorSceneBars")
+bars_on_scene = NodePath("Camera/LcorSceneBars")
+bars_on_drums = NodePath("Camera/DrumsBars")
+cool_on_rcor = NodePath("Camera/RcorDog")
+cool_on_scene = NodePath("Camera/SceneDog")
+tofy_on_rcor = NodePath("Camera/RcorTofy")
+tofy_on_scene = NodePath("Camera/SceneTofy")
+
+[node name="Camera" type="TextureRect" parent="." unique_id=1777363699]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 62.0
+offset_right = 441.0
+offset_bottom = -140.0
+grow_vertical = 2
+texture = ExtResource("3_g52y4")
+expand_mode = 1
+
+[node name="LcorSceneBars" type="TextureRect" parent="Camera" unique_id=326199696]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = 198.0
+offset_right = -143.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_g52y4")
+expand_mode = 1
+
+[node name="DrumsBars" type="TextureRect" parent="Camera" unique_id=871046590]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = 97.0
+offset_right = -137.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_g52y4")
+expand_mode = 1
+
+[node name="RcorTofy" type="TextureRect" parent="Camera" unique_id=377903721]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 149.0
+offset_top = 188.0
+offset_right = -147.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_a4gjp")
+expand_mode = 1
+
+[node name="SceneTofy" type="TextureRect" parent="Camera" unique_id=1651408800]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 235.0
+offset_top = 145.0
+offset_right = -61.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_a4gjp")
+expand_mode = 1
+
+[node name="SceneDog" type="TextureRect" parent="Camera" unique_id=1052684317]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 221.0
+offset_right = -266.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_g0i15")
+expand_mode = 1
+
+[node name="RcorDog" type="TextureRect" parent="Camera" unique_id=1444800686]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = 272.0
+offset_right = -139.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_g0i15")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=456534009]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -329.0
+offset_top = 62.0
+offset_right = -75.0
+offset_bottom = 323.0
+grow_horizontal = 0
+columns = 2
+
+[node name="LCorButton" type="Button" parent="GridContainer" unique_id=2122547168]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Лев.
+Коридор"
+
+[node name="RCorButton" type="Button" parent="GridContainer" unique_id=579050077]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Прав.
+Коридор"
+
+[node name="SceneButton" type="Button" parent="GridContainer" unique_id=1994081658]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Сцена"
+
+[node name="DrumsButton" type="Button" parent="GridContainer" unique_id=977539939]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Барабаны"
+
+[node name="CloseButton" type="Button" parent="." unique_id=1791581893]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -281.0
+offset_top = -68.0
+offset_right = 281.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 58
+flat = true
+
+[node name="Label" type="Label" parent="CloseButton" unique_id=625380179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 59
+text = "^ ^ ^"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyText" type="Label" parent="." unique_id=64369253]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = 38.0
+offset_right = -75.0
+offset_bottom = 82.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "6767"
+
+[node name="Consumption" type="Label" parent="." unique_id=980685265]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -68.0
+offset_right = 189.0
+offset_bottom = -33.0
+grow_vertical = 0
+
+[node name="Donate" type="Button" parent="." unique_id=315538130]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = 82.0
+offset_right = -75.0
+offset_bottom = 134.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Задонатить на винг"
+
+[node name="TooLate" type="Label" parent="." unique_id=1581053798]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -329.0
+offset_top = -135.0
+offset_right = -75.0
+offset_bottom = -95.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Уже поздно"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Donate" to="." method="_on_donate_pressed"]

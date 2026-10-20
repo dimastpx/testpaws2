@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0ylwyr7iqcva"]
+
+[ext_resource type="Material" uid="uid://f838ca2qv2te" path="res://Resourses/Wall/Bricks097_2K-JPG.tres" id="1_4br73"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c34bh"]
+lightmap_size_hint = Vector2i(64, 106)
+add_uv2 = true
+size = Vector3(12, 4, 0.179)
+
+[node name="LWall" type="MeshInstance3D" unique_id=274208438]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("1_4br73")
+mesh = SubResource("BoxMesh_c34bh")
