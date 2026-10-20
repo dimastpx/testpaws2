@@ -38,9 +38,13 @@ jobs:
           unzip -q "Godot_v${GODOT_VERSION}-${GODOT_STATUS}_export_templates.tpz"
           mv templates/* ~/Library/Application\ Support/Godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}/
 
-      - name: Export Xcode Project from Godot
+      - name: Import Assets and Export Xcode Project
         run: |
           mkdir -p build/ios
+          # 1. Принудительный первичный импорт всех ассетов и текстур
+          /Applications/Godot.app/Contents/MacOS/Godot --headless --editor --quit || true
+          
+          # 2. Непосредственно экспорт уже с готовым кэшем текстур
           /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "${EXPORT_PRESET_NAME}" build/ios/${APP_NAME}.xcodeproj
 
       - name: Build and Package Unsigned IPA via Xcode
